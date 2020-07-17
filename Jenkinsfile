@@ -54,5 +54,5 @@ String goProject
 String githubCredentialsId
 
 void make(String goal) {
-    sh "cd /go/src/${repositoryName} && make ${goal}"
+    sh "cd /go/src/${project} && make ${goal}"
 }
