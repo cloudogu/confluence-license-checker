@@ -58,6 +58,7 @@ func (dw *defaultWatcher) Watch() error {
 	duration := time.Duration(dw.args.WatchIntervalInSecs) * time.Second
 	log.Debugf("Start License check using %d seconds", dw.args.WatchIntervalInSecs)
 
+	//lint:ignore SA1015 (don't warn about leaking ticker)
 	for range time.Tick(duration) {
 		done, err := dw.doWatchWork()
 		if err != nil {
