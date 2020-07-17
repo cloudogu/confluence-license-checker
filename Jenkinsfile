@@ -5,16 +5,15 @@ import com.cloudogu.ces.cesbuildlib.*
 node('docker') {
     timestamps {
         repositoryOwner = 'cloudogu'
-        repositoryName = 'confluence'
+        repositoryName = 'confluence-license-checker'
         project = "github.com/${repositoryOwner}/${repositoryName}"
-        goProject = "github.com/${repositoryOwner}/confluence-license-checker"
         githubCredentialsId = 'sonarqube-gh'
 
         stage('Checkout') {
             checkout scm
         }
 
-        docker.image('cloudogu/golang:1.12.10-stretch').inside("--volume ${WORKSPACE}:/go/src/${goProject}/") {
+        docker.image('cloudogu/golang:1.12.10-stretch').inside("--volume ${WORKSPACE}:/go/src/${project}/") {
             stage('Build') {
                 make 'clean compile'
             }
@@ -22,6 +21,15 @@ node('docker') {
             stage('Unit Test') {
                 make 'unit-test'
                 junit allowEmptyResults: true, testResults: 'target/unit-tests/*-tests.xml'
+            }
+
+            stage('Static Analysis') {
+                def commitSha = sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
+                withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'sonarqube-gh', usernameVariable: 'USERNAME', passwordVariable: 'REVIEWDOG_GITHUB_API_TOKEN']]) {
+                    withEnv(["CI_PULL_REQUEST=${env.CHANGE_ID}", "CI_COMMIT=${commitSha}", "CI_REPO_OWNER=cloudogu", "CI_REPO_NAME=${repositoryName}"]) {
+                        make 'static-analysis'
+                    }
+                }
             }
         }
         stage('SonarQube') {
@@ -46,5 +54,5 @@ String goProject
 String githubCredentialsId
 
 void make(String goal) {
-    sh "cd /go/src/${goProject} && make ${goal}"
+    sh "cd /go/src/${repositoryName} && make ${goal}"
 }
