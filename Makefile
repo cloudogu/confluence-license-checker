@@ -22,8 +22,3 @@ include build/make/deploy-debian.mk
 include build/make/digital-signature.mk
 include build/make/self-update.mk
 include build/make/release.mk
-
-.PHONY reformat-entities:
-reformat-entities:
-	CURRENT_UID="${UID_NR}:${GID_NR}" docker-compose -f export-formatter/docker-compose.yml up --build format-export
-	CURRENT_UID="${UID_NR}:${GID_NR}" docker-compose -f export-formatter/docker-compose.yml down
