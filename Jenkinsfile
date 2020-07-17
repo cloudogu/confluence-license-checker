@@ -7,7 +7,7 @@ node('docker') {
         repositoryOwner = 'cloudogu'
         repositoryName = 'confluence'
         project = "github.com/${repositoryOwner}/${repositoryName}"
-        goProject = "github.com/${repositoryOwner}/license-checker"
+        goProject = "github.com/${repositoryOwner}/confluence-license-checker"
         githubCredentialsId = 'sonarqube-gh'
 
         stage('Checkout') {

@@ -1,4 +1,4 @@
-module github.com/cloudogu/license-checker
+module github.com/cloudogu/confluence-license-checker
 
 go 1.13
 

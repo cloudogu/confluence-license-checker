@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/cloudogu/license-checker/license/tester"
-	"github.com/cloudogu/license-checker/license/watcher"
+	"github.com/cloudogu/confluence-license-checker/license/tester"
+	"github.com/cloudogu/confluence-license-checker/license/watcher"
 	"github.com/op/go-logging"
 	"github.com/pkg/errors"
 	"github.com/urfave/cli/v2"

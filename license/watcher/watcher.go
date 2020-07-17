@@ -1,7 +1,7 @@
 package watcher
 
 import (
-	"github.com/cloudogu/license-checker/license/tester"
+	"github.com/cloudogu/confluence-license-checker/license/tester"
 	"github.com/op/go-logging"
 	"github.com/pkg/errors"
 	"time"
