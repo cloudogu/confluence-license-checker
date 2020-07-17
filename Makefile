@@ -1,7 +1,7 @@
 MAKEFILES_VERSION=4.2.0
 
 # Set these to the desired values
-ARTIFACT_ID=license-checker
+ARTIFACT_ID=confluence-license-checker
 VERSION=0.1.0
 GOTAG=1.12.7-1
 
