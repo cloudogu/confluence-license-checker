@@ -16,7 +16,7 @@ node('docker') {
 
         docker.image('cloudogu/golang:1.12.10-stretch').inside("--volume ${WORKSPACE}:/go/src/${goProject}/") {
             stage('Build') {
-                make 'clean build'
+                make 'clean compile'
             }
 
             stage('Unit Test') {
