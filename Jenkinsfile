@@ -111,7 +111,7 @@ BranchType decideBranchType(String branch, String changeTarget) {
         detectedType = BranchType.UNDER_DEVELOPMENT
     }
 
-    echo "The branch ${branch} has been detected as the ${detectedType} branch."
+    echo "The branch ${branch} has been detected as ${detectedType} branch."
     return detectedType
 }
 
