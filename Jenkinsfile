@@ -13,7 +13,7 @@ node('docker') {
             checkout scm
         }
 
-        docker.image('golang:1.22.4').inside("--volume ${WORKSPACE}:${projectPath}") {
+        docker.image('golang:1.22.4').mountJenkinsUser().inside("--volume ${WORKSPACE}:${projectPath}") {
             stage('Build') {
                 make 'clean compile'
                 archiveArtifacts 'target/*'
