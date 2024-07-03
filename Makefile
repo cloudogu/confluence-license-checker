@@ -2,7 +2,7 @@ MAKEFILES_VERSION=9.0.4
 
 # Set these to the desired values
 ARTIFACT_ID=confluence-license-checker
-VERSION=0.1.0
+VERSION=0.1.1
 
 GOTAG=1.22.4
 LINT_VERSION=v1.57.2
