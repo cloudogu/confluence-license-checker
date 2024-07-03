@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.1] - 2024-07-03
+### Security
+- Re-compile with Go 1.22 and update versions of dependency libraries 
+
 ## [0.1.0] - 2020-07-22
 ### Added
 - Created confluence license checker
