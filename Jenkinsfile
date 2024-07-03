@@ -1,5 +1,5 @@
 #!groovy
-@Library(['github.com/cloudogu/ces-build-lib@1.44.2'])
+@Library('github.com/cloudogu/ces-build-lib@2.2.1')
 import com.cloudogu.ces.cesbuildlib.*
 
 node('docker') {
@@ -13,9 +13,10 @@ node('docker') {
             checkout scm
         }
 
-        docker.image('cloudogu/golang:1.12.10-stretch').inside("--volume ${WORKSPACE}:${projectPath}") {
+        docker.image('golang:1.22.4').inside("--volume ${WORKSPACE}:${projectPath}") {
             stage('Build') {
                 make 'clean compile'
+                archiveArtifacts 'target/*'
             }
 
             stage('Unit Test') {
