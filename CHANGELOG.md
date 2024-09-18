@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0] - 2024-09-18
+### Changed
+- Relicense to AGPL-3.0-only
+
 ## [0.1.1] - 2024-07-03
 ### Security
 - Re-compile with Go 1.22 and update versions of dependency libraries 
