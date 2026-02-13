@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [0.2.1] - 2026-02-13
 ### Security
 - [#8] Fix CVE [CVE-2025-68121](https://avd.aquasec.com/nvd/2026/CVE-2025-68121) by compiling with Go 1.25.7
 
