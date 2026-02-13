@@ -4,7 +4,7 @@ MAKEFILES_VERSION=10.6.0
 ARTIFACT_ID=confluence-license-checker
 VERSION=0.2.0
 
-GOTAG=1.22.4
+GOTAG=1.25.7
 LINT_VERSION=v1.57.2
 # overwrite ADDITIONAL_LDFLAGS to disable static compilation
 # this should fix https://github.com/golang/go/issues/13470
