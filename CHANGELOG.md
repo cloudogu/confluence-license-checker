@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.1] - 2026-02-13
+### Security
+- [#8] Fix CVE [CVE-2025-68121](https://avd.aquasec.com/nvd/2026/CVE-2025-68121) by compiling with Go 1.25.7
+
 ## [0.2.0] - 2024-09-18
 ### Changed
 - Relicense to AGPL-3.0-only
