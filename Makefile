@@ -1,4 +1,4 @@
-MAKEFILES_VERSION=9.0.4
+MAKEFILES_VERSION=10.6.0
 
 # Set these to the desired values
 ARTIFACT_ID=confluence-license-checker
